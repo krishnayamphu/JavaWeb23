@@ -4,4 +4,45 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.ky.servlet.MyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.ky.servlet.TestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <servlet-class>com.ky.servlet.SetSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <servlet-class>com.ky.servlet.GetSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DelSessionServlet</servlet-name>
+        <servlet-class>com.ky.servlet.DelSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/my-servlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SetSessionServlet</servlet-name>
+        <url-pattern>/set-session</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetSessionServlet</servlet-name>
+        <url-pattern>/get-session</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DelSessionServlet</servlet-name>
+        <url-pattern>/del-session</url-pattern>
+    </servlet-mapping>
 </web-app>
