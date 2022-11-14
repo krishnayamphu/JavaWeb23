@@ -4,6 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>AptechLalitpur</param-value>
+    </context-param>
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>com.ky.filters.MyFilter</filter-class>
+    </filter>
     <servlet>
         <servlet-name>MyServlet</servlet-name>
         <servlet-class>com.ky.servlet.MyServlet</servlet-class>
@@ -23,6 +31,14 @@
     <servlet>
         <servlet-name>DelSessionServlet</servlet-name>
         <servlet-class>com.ky.servlet.DelSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletConfigServlet</servlet-name>
+        <servlet-class>com.ky.servlet.ServletConfigServlet</servlet-class>
+        <init-param>
+            <param-name>brand</param-name>
+            <param-value>Apple Inc.</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>MyServlet</servlet-name>
@@ -45,4 +61,14 @@
         <servlet-name>DelSessionServlet</servlet-name>
         <url-pattern>/del-session</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletConfigServlet</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/test</url-pattern>
+    </filter-mapping>
+
 </web-app>
