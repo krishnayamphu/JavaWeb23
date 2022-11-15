@@ -13,13 +13,15 @@ import java.util.ArrayList;
 public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ArrayList<User> users= UserDAO.getUsers();
-        request.setAttribute("users",users);
-        request.getRequestDispatcher("users/index.jsp").forward(request,response);
+        ArrayList<User> users = UserDAO.getUsers();
+        request.setAttribute("users", users);
+        request.getRequestDispatcher("users/index.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        int id = Integer.parseInt(request.getParameter("id"));
+        UserDAO.deleteUser(id);
+        response.sendRedirect("users");
     }
 }
