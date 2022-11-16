@@ -6,6 +6,8 @@
 </head>
 <body>
 <h3>User Details</h3>
+<a href="users">Users</a>
+<a href="user-create">Create User</a>
 <hr>
 <% User user= (User) request.getAttribute("user"); %>
 <form action="user-edit" method="post">

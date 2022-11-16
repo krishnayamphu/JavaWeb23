@@ -5,6 +5,7 @@
 </head>
 <body>
 <h3>New User Details</h3>
+<a href="users">Users</a>
 <hr>
 <form action="user-create" method="post">
     <input type="text" name="username" placeholder="username" required>
