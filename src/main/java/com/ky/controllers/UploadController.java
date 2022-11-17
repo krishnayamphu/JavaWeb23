@@ -52,7 +52,7 @@ public class UploadController extends HttpServlet {
                     } else {
                         String contextPath=getServletContext().getRealPath("/uploads");
                         processUploadedFile(item,contextPath);
-                        response.sendRedirect("uploads");
+                        response.sendRedirect("upload");
                     }
                 }
 
