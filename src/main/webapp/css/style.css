@@ -1,0 +1,58 @@
+*{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: teal;
+    padding: 15px;
+}
+nav{
+    background-color: aquamarine;
+}
+nav a{
+    text-decoration: none;
+    color:black;
+    padding: 5px 15px;
+    display: inline-block;
+}
+.tbl-users{
+    border-collapse: collapse;
+    margin: 30px;
+}
+.tbl-users th, .tbl-users td{
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+}
+
+.action-group{
+    display: flex;
+    justify-content: center;
+}
+.action-group a{
+    display: inline-block;
+    width: 70px;
+    padding: 5px 0;
+    background-color: #245fce;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.action-group a:hover{
+    background-color: #154bb6;
+}
+.form-action button{
+    width: 70px;
+    display: inline-block;
+    padding: 6px 0;
+    margin-left: 5px;
+    background-color: #f13434;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+.form-action button:hover{
+    background-color: #c92525;
+}

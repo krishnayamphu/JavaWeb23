@@ -26,6 +26,7 @@ public class UserDAO {
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
+                user.setPicture(rs.getString("picture"));
             }
             con.close();
         } catch (SQLException ex) {
@@ -47,6 +48,7 @@ public class UserDAO {
                 user.setUsername(rs.getString("username"));
                 user.setPassword(rs.getString("password"));
                 user.setEmail(rs.getString("email"));
+                user.setPicture(rs.getString("picture"));
                 users.add(user);
             }
             con.close();
@@ -57,13 +59,14 @@ public class UserDAO {
     }
 
     public static void addUser(User user) {
-        String sql = "INSERT INTO users VALUES(null,?,?,?)";
+        String sql = "INSERT INTO users VALUES(null,?,?,?,?)";
         try {
             Connection con = ConnectDB.connect();
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getPassword());
             ps.setString(3, user.getEmail());
+            ps.setString(4,user.getPicture());
             ps.executeUpdate();
             con.close();
         } catch (SQLException e) {
