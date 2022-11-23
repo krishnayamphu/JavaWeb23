@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.ky.models.User" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,27 +22,22 @@
         <th>Picture</th>
         <th>Action</th>
     </tr>
-    <%
-        ArrayList<User> users= (ArrayList<User>) request.getAttribute("users");
-        for(User user:users){
-    %>
+    <c:forEach var="user" items="${users}">
         <tr>
-            <td><%= user.getUsername() %></td>
-            <td><%= user.getEmail() %></td>
-            <td><img src="uploads/<%= user.getPicture()%>" width="100px" alt=""></td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td><img src="uploads/>${user.picture}" width="100px" alt=""></td>
             <td>
                 <div class="action-group">
-                    <a href="user-edit?id=<%= user.getId() %>">Edit</a>
+                    <a href="user-edit?id=>${user.id}">Edit</a>
                     <form class="form-action" action="users" method="post">
-                        <input type="hidden" name="id" value="<%= user.getId() %>">
+                        <input type="hidden" name="id" value=">${user.id}">
                         <button>Delete</button>
                     </form>
                 </div>
-           </td>
+            </td>
         </tr>
-    <%
-        }
-    %>
+    </c:forEach>
 </table>
 </body>
 </html>
